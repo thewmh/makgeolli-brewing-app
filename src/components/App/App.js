@@ -16,6 +16,8 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute'
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
+import HomePage from '../HomePage/HomePage';
+import AddARecipe from '../AddARecipe/AddARecipe';
 
 import './App.css';
 
@@ -32,8 +34,13 @@ class App extends Component {
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             <Redirect exact from="/" to="/home" />
-            {/* Visiting localhost:3000/about will show the about page.
-            This is a route anyone can see, no login necessary */}
+            {/* Visiting localhost:3000/home or /about will show the following pages.
+            These routes anyone can see, no login necessary */}
+            <Route
+              exact
+              path="/home"
+              component={HomePage}
+            />
             <Route
               exact
               path="/about"
@@ -45,7 +52,7 @@ class App extends Component {
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
             <ProtectedRoute
               exact
-              path="/home"
+              path="/user"
               component={UserPage}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
@@ -54,6 +61,13 @@ class App extends Component {
               exact
               path="/info"
               component={InfoPage}
+            />
+            {/* This works the same as the other protected route, except that if the user is logged in,
+            they will see the add a recipe page instead. */}
+            <ProtectedRoute
+              exact
+              path="/add-a-recipe"
+              component={AddARecipe}
             />
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
