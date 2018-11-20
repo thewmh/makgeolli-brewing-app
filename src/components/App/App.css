@@ -9,8 +9,8 @@ body {
 }
 
 form {
-    background-color: #dbd5d5;
-    width: 30%;
+    background-color: transparent;
+    width: 40%;
     height: 250px;
     margin: 20px auto;
     padding: 25px;
@@ -20,6 +20,61 @@ form {
 input {
     margin: 5px;
     margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid fuchsia;
+    font-size: 15px;
+}
+
+button, select, button:focus, select:focus, input:focus {
+    border: none;
+    outline: transparent;
+}
+
+button {
+    font-size: 35px;
+}
+
+select {
+    margin: 50px;
+    width: 100px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid black;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;  
+    background-color: transparent;
+}
+
+select:focus {
+    outline: none;
+    border: 1px solid black;
+}
+
+option {
+    border: 0;
+    border-bottom: 1px solid #444;
+    padding: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+ul {
+    text-align: left;
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+ul:active {
+    display: block;
+  }
+
+li {
+    list-style: none;
 }
 
 .log-in, .log-out, .register {

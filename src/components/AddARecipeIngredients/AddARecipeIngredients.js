@@ -74,10 +74,11 @@ class AddARecipeIngredients extends Component {
 
                         <select required placeholder="Select Ingredient Measure"
                         value={ingredient.id} onChange={this.handleChange(i)} name="id">{this.props.reduxState.ingredientUnits.map(name => (<option key={name.id} value={name.id}>{name.name}</option>))}</select>
-                        <button onClick={this.handleRemoveIngredient(i)}>Remove this ingredient</button>
+                        <button onClick={this.handleRemoveIngredient(i)}>-</button>
                     </>
-                ))}
-                <button type="button" onClick={this.handleAddIngredient}>Add another ingredient</button>
+                ))}<br />
+                <button type="button" onClick={this.handleAddIngredient}>+</button>
+                <br />
                 <button onClick={this.logIngredientState}>Save Ingredient List</button>
                 </form>
             </div>
