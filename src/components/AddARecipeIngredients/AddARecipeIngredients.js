@@ -53,14 +53,19 @@ class AddARecipeIngredients extends Component {
         this.setState( this.ingredient );
     }
 
-    logIngredientState = (event) => {
+    saveIngredientState = (event) => {
         event.preventDefault();
         console.log(this.state.ingredients);
-    }
+        if(this.state.ingredients[0].name !== ''){
+            this.props.dispatch({type: 'ADD_RECIPE_INGREDIENTS', payload: this.state});} else {
+                alert ('Please add ingredients for your recipe!')
+            }
+        }
+    
 
     render() {
         return (
-            <div>
+            <div className="add-ingredients">
                 {JSON.stringify(this.state)}
                 <p>Add your recipe ingredients here.</p>
                 <form onSubmit={this.submitIngredients}>
@@ -74,12 +79,12 @@ class AddARecipeIngredients extends Component {
 
                         <select required placeholder="Select Ingredient Measure"
                         value={ingredient.id} onChange={this.handleChange(i)} name="id">{this.props.reduxState.ingredientUnits.map(name => (<option key={name.id} value={name.id}>{name.name}</option>))}</select>
-                        <button onClick={this.handleRemoveIngredient(i)}>-</button>
+                        {this.state.ingredients.length <= 1 ? (<></> ) : (<button onClick={this.handleRemoveIngredient(i)}>Remove this Ingredient-</button>) }
                     </>
                 ))}<br />
-                <button type="button" onClick={this.handleAddIngredient}>+</button>
-                <br />
-                <button onClick={this.logIngredientState}>Save Ingredient List</button>
+                <button type="button" onClick={this.handleAddIngredient}>Add another Ingredient +</button>
+                <br /><br /><br />
+                <button onClick={this.saveIngredientState}>Save Ingredient List</button>
                 </form>
             </div>
         );
