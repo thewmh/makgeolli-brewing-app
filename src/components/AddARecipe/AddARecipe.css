@@ -142,8 +142,9 @@ button, select, button:focus, select:focus, input:focus {
 }
 
 button {
-    font-size: 35px;
+    font-size: 30px;
     float: right;
+    height: 34px;
 }
 
 button:hover {
@@ -175,4 +176,12 @@ option {
     padding: 10px;
     -webkit-appearance: none;
     -moz-appearance: none;
+  }
+
+  .ingredient-input {
+      width: 20%;
+  }
+
+  .individual-ingredient {
+      display: block;
   }

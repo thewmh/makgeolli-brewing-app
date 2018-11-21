@@ -8,7 +8,7 @@ const Nav = (props) => (
   <div className="nav">
     <Link to="/home">
       <h2 className="nav-title">막걸리</h2>
-    </Link>
+    </Link><br/>
     <div className="nav-right">
       <Link className="nav-link" to="/">
         {/* Show this link if they are logged in or not,
@@ -16,13 +16,13 @@ const Nav = (props) => (
         and call this link 'Login / Register' if they are not */}
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
+      <Link className="nav-link" to="/user">
+          {props.user.id ? 'User Profile' : 'Login / Register'}
+          </Link>
       {props.user.id && (
         <>
           <Link className="nav-link" to="/add-a-recipe">
             Add a Recipe
-          </Link>
-          <Link className="nav-link" to="/user">
-          {props.user.id ? 'User Profile' : 'Login / Register'}
           </Link>
           <LogOutButton className="nav-link" to="/"></LogOutButton>
         </>

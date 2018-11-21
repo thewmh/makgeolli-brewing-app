@@ -23,8 +23,8 @@ const router = express.Router();
         .then((response) => {
             console.log(response.rows[0].id);
             const sqlText = `INSERT INTO recipe_instruction_list (instruction_number, instruction_details, recipes_id) VALUES ($1, $2, $3)`;
-            recipeObj.instructions.map(instruction => {
-                pool.query(sqlText, [instruction.instruction_number, instruction.instruction_details, response.rows[0].id])
+            recipeObj.instructions.map((instruction, i) => {
+                pool.query(sqlText, [i+1, instruction.instruction_details, response.rows[0].id])
             })
         })
         .catch((error) => {

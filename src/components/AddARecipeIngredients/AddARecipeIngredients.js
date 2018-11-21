@@ -70,17 +70,17 @@ class AddARecipeIngredients extends Component {
                 <p>Add your recipe ingredients here.</p>
                 <form onSubmit={this.submitIngredients}>
                 {this.state.ingredients.map((ingredient, i) => (
-                    <>
+                    <span class="individual-ingredient">
                         <input type="text" name="name" placeholder="Enter Ingredient Name"
-                        value={ingredient.name} onChange={this.handleChange(i)}/>
+                        value={ingredient.name} onChange={this.handleChange(i)} class="ingredient-input"/>
 
                         <input type="number" name="quantity" placeholder="Enter Ingredient Quantity"
-                        value={ingredient.quantity} onChange={this.handleChange(i)}/>
+                        value={ingredient.quantity} onChange={this.handleChange(i)} class="ingredient-input"/>
 
                         <select required placeholder="Select Ingredient Measure"
                         value={ingredient.id} onChange={this.handleChange(i)} name="id">{this.props.reduxState.ingredientUnits.map(name => (<option key={name.id} value={name.id}>{name.name}</option>))}</select>
-                        {this.state.ingredients.length <= 1 ? (<></> ) : (<button onClick={this.handleRemoveIngredient(i)}>Remove this Ingredient-</button>) }
-                    </>
+                        {this.state.ingredients.length <= 1 ? (<></> ) : (<button onClick={this.handleRemoveIngredient(i)}>Remove Ingredient {i+1}</button>) }
+                    </span>
                 ))}<br />
                 <button type="button" onClick={this.handleAddIngredient}>Add another Ingredient +</button>
                 <br /><br /><br />

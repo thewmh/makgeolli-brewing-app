@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 class AddARecipeInstructions extends Component {
 
     state = {
-        instructions: [{ instruction_number: '', instruction_details: '' }]
+        instructions: [{ instruction_details: '' }]
     }
 
     handleChange = (i) => (event) => {
@@ -20,7 +20,6 @@ class AddARecipeInstructions extends Component {
         event.preventDefault();
         this.setState({
             instructions: this.state.instructions.concat([{
-                instruction_number: '',
                 instruction_details: ''
             }])
         });
@@ -50,17 +49,20 @@ class AddARecipeInstructions extends Component {
     render() {
         return (
             <div>
-                {JSON.stringify(this.state)}
-                Add your recipe instructions here.
+                {/* {JSON.stringify(this.state)}
+                Add your recipe instructions here. */}
                 <form onSubmit={this.submitInstructions} className="instruction-form">
                 {this.state.instructions.map((instruction, i) => (
                     <>
-                    <input type="number" name="instruction_number"
-                    placeholder="Enter instruction step number" value={instruction.instruction_number}
-                    onChange={this.handleChange(i)}/>
-                    <textarea type="text" name="instruction_details"
-                    placeholder="Enter the details of this instruction" value={instruction.instruction_details}
-                    onChange={this.handleChange(i)}/>
+
+                    {/* <textarea id="recipe-description" name="description"
+                          value={this.state.description} onChange={this.handleChange} class="question" required autocomplete="off" />
+                <label for="recipe-description"><span>Please describe your recipe</span></label> */}
+                    <label for="recipe-instruction" value={instruction.instruction_number}><span>Instruction Number {i+1}</span></label>
+                    <textarea type="text" name="instruction_details" 
+                    id="recipe-instruction" value={instruction.instruction_details}
+                    onChange={this.handleChange(i)} class="question" required autocomplete="off"/>
+                    <label for="recipe-instruction"><span>Enter the details of this instruction</span></label>
                     {this.state.instructions.length <= 1 ? (<></> ) : (<button onClick={this.handleRemoveInstruction(i)}>Remove this Instruction -</button>) }
                     </>
                 ))}<br />
