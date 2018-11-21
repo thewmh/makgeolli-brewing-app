@@ -42,7 +42,7 @@ class AddARecipeDescription extends Component {
                 <button onClick={this.saveRecipeTitle}>Save Title</button>
                 <textarea id="recipe-description" name="description"
                           value={this.state.description} onChange={this.handleChange} class="question" required autocomplete="off" />
-                <label for="recipe-description"><span>Please describe your recipe</span></label>
+                <label for="recipe-description"><span>Describe your recipe</span></label>
                 <button onClick={this.saveRecipeDescription}>Save Description</button>
             </div>
         );

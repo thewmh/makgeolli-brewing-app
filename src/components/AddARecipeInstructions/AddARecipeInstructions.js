@@ -51,6 +51,7 @@ class AddARecipeInstructions extends Component {
             <div>
                 {/* {JSON.stringify(this.state)}
                 Add your recipe instructions here. */}
+                <h1>Enter recipe instructions</h1>
                 <form onSubmit={this.submitInstructions} className="instruction-form">
                 {this.state.instructions.map((instruction, i) => (
                     <>
@@ -62,7 +63,7 @@ class AddARecipeInstructions extends Component {
                     <textarea type="text" name="instruction_details" 
                     id="recipe-instruction" value={instruction.instruction_details}
                     onChange={this.handleChange(i)} class="question" required autocomplete="off"/>
-                    <label for="recipe-instruction"><span>Enter the details of this instruction</span></label>
+                    <label for="recipe-instruction"><span>Enter details of step {i+1}</span></label>
                     {this.state.instructions.length <= 1 ? (<></> ) : (<button onClick={this.handleRemoveInstruction(i)}>Remove this Instruction -</button>) }
                     </>
                 ))}<br />

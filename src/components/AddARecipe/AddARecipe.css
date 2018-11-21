@@ -143,8 +143,12 @@ button, select, button:focus, select:focus, input:focus {
 
 button {
     font-size: 30px;
-    float: right;
+    /* float: right; */
     height: 34px;
+}
+
+.add-a-recipe button {
+    float: right;
 }
 
 button:hover {

@@ -66,8 +66,7 @@ class AddARecipeIngredients extends Component {
     render() {
         return (
             <div className="add-ingredients">
-                {JSON.stringify(this.state)}
-                <p>Add your recipe ingredients here.</p>
+                <h1>Enter Recipe Ingredients</h1>
                 <form onSubmit={this.submitIngredients}>
                 {this.state.ingredients.map((ingredient, i) => (
                     <span class="individual-ingredient">

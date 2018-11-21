@@ -26,7 +26,11 @@ const router = express.Router();
             recipeObj.instructions.map((instruction, i) => {
                 pool.query(sqlText, [i+1, instruction.instruction_details, response.rows[0].id])
             })
-        })
+            const sqlTextIng = `INSERT INTO recipe_ingredient_list (name, quantity, units_id, recipes_id) VALUES ($1, $2, $3, $4)`;
+            recipeObj.ingredients.map((ingredient, i) => {
+                pool.query(sqlTextIng, [ingredient.name, ingredient.quantity, ingredient.id, response.rows[0].id])
+            })
+        }) 
         .catch((error) => {
             console.log('there was an error', error)
         })
