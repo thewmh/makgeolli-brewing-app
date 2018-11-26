@@ -1,4 +1,4 @@
-const addRecipeReducer = (state = {}, action) => {
+const addRecipeReducer = (state = [], action) => {
     switch (action.type) {
         case 'ADD_RECIPE_TITLE':
             return {...state, title: action.payload.title}
@@ -8,12 +8,15 @@ const addRecipeReducer = (state = {}, action) => {
             return {...state, ingredients: action.payload.ingredients}
         case 'ADD_RECIPE_INSTRUCTIONS':
             return {...state, instructions: action.payload.instructions}
-            break;
         case 'ADD_NEW_RECIPE':
             state = action.payload
             break;
-      case 'SET_RECIPES':
-        return action.payload;
+        case 'SET_RECIPES':
+            return action.payload;
+        case 'SET_RECIPE_VIEW':
+            return action.payload;
+        case 'ADD_RECIPE_TO_USER_LIBRARY':
+            return action.payload
       default:
         return state;
     }

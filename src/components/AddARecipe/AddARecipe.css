@@ -10,6 +10,13 @@ textarea {
   width: 100%;
 }
 
+h3 {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: #333;
+}
+
 textarea:focus,
 input:focus {
   outline: 0;
@@ -144,7 +151,7 @@ button, select, button:focus, select:focus, input:focus {
 button {
     font-size: 30px;
     /* float: right; */
-    height: 34px;
+    /* height: 34px; */
 }
 
 .add-a-recipe button {

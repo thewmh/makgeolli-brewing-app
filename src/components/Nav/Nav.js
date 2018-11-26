@@ -6,7 +6,7 @@ import './Nav.css';
 
 const Nav = (props) => (
   <div className="nav">
-    <Link to="/home">
+    <Link to="/">
       {/* <h2 className="nav-title">막걸리</h2> */}
       <img src="./mak-logo.png" alt="막" className="막"/>
     </Link><br/>
@@ -15,6 +15,7 @@ const Nav = (props) => (
         {/* Show this link if they are logged in or not,
         but call this link 'Home' if they are logged in,
         and call this link 'Login / Register' if they are not */}
+        Recipe Gallery
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
       <Link className="nav-link" to="/user">

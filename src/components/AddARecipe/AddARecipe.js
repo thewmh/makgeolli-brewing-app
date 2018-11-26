@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import AddARecipeDescription from '../AddARecipeDescription/AddARecipeDescription';
-import AddARecipeIngredients from '../AddARecipeIngredients/AddARecipeIngredients';
-import AddARecipeInstructions from '../AddARecipeInstructions/AddARecipeInstructions';
+import AddARecipeDescription from './AddARecipeDescription/AddARecipeDescription';
+import AddARecipeIngredients from './AddARecipeIngredients/AddARecipeIngredients';
+import AddARecipeInstructions from './AddARecipeInstructions/AddARecipeInstructions';
 import '../AddARecipe/AddARecipe.css';
 
 class AddARecipe extends Component {
@@ -23,8 +23,12 @@ class AddARecipe extends Component {
 
     submitNewRecipe = (event) => {
         event.preventDefault();
+        console.log('this is the reduxState for recipes', this.props.reduxState.recipes);
+        if((this.props.reduxState.recipes.title && this.props.reduxState.recipes.description)  !== undefined && (this.props.reduxState.recipes.instructions.length && this.props.reduxState.recipes.ingredients.length) !== 0){
         this.props.dispatch({ type: 'ADD_NEW_RECIPE', payload: this.props.reduxState.recipes});
-        // this.sendRecipe();
+        this.props.history.push(`/success`);
+        }
+        else {alert('Please fill out all recipe fields!')}
     }
 
     render() {

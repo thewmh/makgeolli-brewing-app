@@ -1,0 +1,12 @@
+.recipe-wrap {
+    margin: auto;
+    width: 100%;
+}
+
+.recipe-gallery-card {
+    width: 25%;
+    margin: 0 2%;
+    display: inline-block;
+    vertical-align: text-top;
+    
+}

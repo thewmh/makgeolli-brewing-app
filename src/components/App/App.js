@@ -18,6 +18,9 @@ import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import HomePage from '../HomePage/HomePage';
 import AddARecipe from '../AddARecipe/AddARecipe';
+import RecipeGallery from '../RecipeGallery/RecipeGallery';
+import RecipePage from '../RecipePage/RecipePage';
+import SuccessPage from '../SuccessPage/SuccessPage';
 
 import './App.css';
 
@@ -33,23 +36,32 @@ class App extends Component {
           <Nav />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-            <Redirect exact from="/" to="/home" />
+            {/* <Redirect exact from="/" to="/home" /> */}
             {/* Visiting localhost:3000/home or /about will show the following pages.
             These routes anyone can see, no login necessary */}
             <Route
               exact
-              path="/home"
-              component={HomePage}
+              path="/"
+              component={RecipeGallery}
             />
             <Route
               exact
               path="/about"
               component={AboutPage}
             />
+            <Route
+              path="/recipe/:id"
+              component={RecipePage}
+            />
             {/* For protected routes, the view could show one of several things on the same route.
             Visiting localhost:3000/home will show the UserPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the 'Login' or 'Register' page.
             Even though it seems like they are different pages, the user is always on localhost:3000/home */}
+            <ProtectedRoute
+              exact
+              path="/success"
+              component={SuccessPage}
+            />
             <ProtectedRoute
               exact
               path="/user"
