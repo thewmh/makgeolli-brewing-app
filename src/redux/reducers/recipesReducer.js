@@ -16,7 +16,11 @@ const addRecipeReducer = (state = [], action) => {
         case 'SET_RECIPE_VIEW':
             return action.payload;
         case 'ADD_RECIPE_TO_USER_LIBRARY':
-            return action.payload
+            return {...state, newUserRecipe: action.payload};
+        case 'SET_USER_RECIPE_LIBRARY':
+            return {userRecipes: action.payload};
+        // case 'DELETE_USER_RECIPE_FROM_LIBRARY':
+        //     return {...state, userRecipes: [action.payload]};
       default:
         return state;
     }

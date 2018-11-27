@@ -14,6 +14,7 @@ const ingredientUnitsRouter = require('./routes/ingredientUnits.router');
 const recipesRouter = require('./routes/recipes.router');
 const individualRecipeRouter = require('./routes/individualRecipe.router');
 const addRecipeToLibrary = require('./routes/addRecipeToLibrary.router');
+const myRecipesRouter = require('./routes/myRecipes.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -33,6 +34,7 @@ app.use('/recipes', recipesRouter);
 app.use('/api/add-a-recipe', recipesRouter);
 app.use(`/recipe`, individualRecipeRouter);
 app.use(`/user/recipes`, addRecipeToLibrary);
+app.use(`/my-recipes`, myRecipesRouter);
 
 // Serve static files
 app.use(express.static('build'));

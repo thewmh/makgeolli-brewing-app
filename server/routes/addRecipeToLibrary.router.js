@@ -9,9 +9,11 @@ router.post('/', async(req, res) => {
     pool.query(sqlText, [recipeObj.user_id, recipeObj.recipe_id])
         .then((response) => {
             console.log('Yay! It worked', response);
+            res.sendStatus(200);
         })
         .catch((error) => {
             console.log('Whoa there gunpowder', error);
+            res.sendStatus(500);
         })
 });
 

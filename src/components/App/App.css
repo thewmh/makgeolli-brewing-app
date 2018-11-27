@@ -110,6 +110,8 @@ li {
   min-width: 100px;
   outline:0;
   cursor: pointer;
+  float: right;
+  margin: 50px;
 }
 
 .log-in:hover, .log-out:hover, .register:hover {

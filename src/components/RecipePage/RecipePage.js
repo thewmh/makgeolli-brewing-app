@@ -5,16 +5,15 @@ import './RecipePage.css';
 class RecipePage extends Component {
 
     addRecipeToUserLibrary = (id) => (event) => {
-        event.preventDefault();
             this.props.dispatch({type: 'ADD_RECIPE_TO_USER_LIBRARY', payload: {recipe_id: id, user_id: this.props.reduxState.user.user_id}});
             this.props.history.push(`/user`);
     }
 
-    // sendRecipe = (event) => {
-    //     // event.preventDefault();
-
-    //     console.log(this.state);
-    // }
+    // handleSubmit = (user) => {
+    //     saveUser(user).then(() =>
+    //       this.props.history.push('/dashboard')
+    //     ))
+    //   }
 
     render() {
         return (
