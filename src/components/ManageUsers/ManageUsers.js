@@ -10,16 +10,23 @@ class ManageUsers extends Component {
     render() {
         return (
             <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th><th>First Name</th><th>Last Name</th><th>Access Level</th><th>Edit User</th><th>Delete User</th>
+                        </tr>
+                    </thead>
+                    <tbody>
                 {this.props.reduxState.admin.map((user, index) => (
                         <>
                         <tr key={index}>
-                        <td><h1>{user.username}</h1></td><td><h1>{user.first_name}</h1></td><td><h1>{user.last_name}</h1></td>
-                        <td><h1>{user.access_level}</h1></td><td><button>Delete User</button></td>
+                        <td>{user.username}</td><td>{user.first_name}</td><td>{user.last_name}</td>
+                        <td>{user.access_level}</td><td><button>Edit User</button></td><td><button>Delete User</button></td>
                         </tr>
                         </>
                     ))}
-                <h1>Do something here!</h1>
-                {JSON.stringify(this.props.reduxState.admin)}
+                    </tbody>
+                </table>
             </div>
         );
     }
