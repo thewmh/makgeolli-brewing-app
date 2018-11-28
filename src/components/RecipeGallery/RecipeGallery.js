@@ -30,11 +30,7 @@ class RecipeGallery extends Component {
       }
 
       viewRecipe = (key) => (event) => {
-          this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: key});
-        //   console.log(this.props.reduxState.recipes);
-        setTimeout(() => {
-            this.props.history.push(`/recipe/${key}`);
-        }, 300);
+          this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: {key: key, history: this.props.history}});
     }
           
     

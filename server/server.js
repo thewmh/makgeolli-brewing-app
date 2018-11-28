@@ -15,6 +15,8 @@ const recipesRouter = require('./routes/recipes.router');
 const individualRecipeRouter = require('./routes/individualRecipe.router');
 const addRecipeToLibrary = require('./routes/addRecipeToLibrary.router');
 const myRecipesRouter = require('./routes/myRecipes.router');
+const userProfileRouter = require('./routes/userProfile.router');
+const adminRouter = require('./routes/admin.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,6 +37,8 @@ app.use('/api/add-a-recipe', recipesRouter);
 app.use(`/recipe`, individualRecipeRouter);
 app.use(`/user/recipes`, addRecipeToLibrary);
 app.use(`/my-recipes`, myRecipesRouter);
+app.use(`/api/user/profile`, userProfileRouter);
+app.use(`/api/admin/manage-users`, adminRouter);
 
 // Serve static files
 app.use(express.static('build'));

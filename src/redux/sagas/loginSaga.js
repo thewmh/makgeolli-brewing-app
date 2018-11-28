@@ -1,4 +1,4 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest, fork } from 'redux-saga/effects';
 import axios from 'axios';
 
 // worker Saga: will be fired on "LOGIN" actions
@@ -20,6 +20,7 @@ function* loginUser(action) {
     // after the user has logged in
     // get the user information from the server
     yield put({type: 'FETCH_USER'});
+    yield put({type: 'FETCH_USER_PROFILE'});
   } catch (error) {
     console.log('Error with user login:', error);
     if (error.response.status === 401) {

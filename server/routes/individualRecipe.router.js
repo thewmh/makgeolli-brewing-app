@@ -52,23 +52,6 @@ router.get(`/:key`, (req, res) => {
 //     const recipeId = req.params.key;
 //     console.log('THIS IS THE RECIPE ID', recipeId);
 //   //   console.log('THIS IS THE RECIPE ID', recipeId);
-//   const sqlText_1 = `SELECT instruction_number, instruction_details FROM recipe_instruction_list WHERE recipe_instruction_list.recipes_id = $1;`;
-// pool.query(sqlText_1, [recipeId])
-// .then((response) => {
-//     console.log('GET got this back from the server', response.rows);
-//     res.send(response); // db rows
-// })
-// .catch((error) => {
-//     console.log('GET error from the server', error);
-//     res.sendStatus(500); // A good server always responds!
-// })
-// });
-
-// router.get(`/:key`, (req, res) => {
-//     console.log(req.params);
-//     const recipeId = req.params.key;
-//     console.log('THIS IS THE RECIPE ID', recipeId);
-//   //   console.log('THIS IS THE RECIPE ID', recipeId);
 //   const sqlText_1 = `SELECT recipe_ingredient_list.name, quantity, ingredient_units.name FROM recipe_ingredient_list JOIN ingredient_units ON recipe_ingredient_list.units_id = ingredient_units.id WHERE recipe_ingredient_list.recipes_id = $1;`; // This query is spot on, thanks Postico!recipe_instruction_list.recipes_id = $1;`;
 // pool.query(sqlText_1, [recipeId])
 // .then((response) => {

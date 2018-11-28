@@ -3,6 +3,61 @@ body {
     margin: 0 auto;
 }
 
-table {
+table, td, tr {
     margin: 0 auto;
+    border: none;
+    border-collapse: collapse;
+}
+
+tr, button {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: #333;
+    background-color: transparent;
+    -webkit-transition: 1000ms;
+    -moz-transition: 1000ms;
+    -ms-transition: 1000ms;
+    -o-transition: 1000ms;
+    transition: 1000ms;
+}
+
+tbody > tr:hover {
+    background-color: #333;
+    color: #fff;
+    -webkit-transition: 1000ms;
+    -moz-transition: 1000ms;
+    -ms-transition: 1000ms;
+    -o-transition: 1000ms;
+    transition: 1000ms;
+}
+
+tr:hover button {
+    background-color: transparent;
+    color: #fff;
+}
+
+tbody td .delete-btn:hover {
+    background-color: transparent;
+    color: red;
+    -webkit-transition: 100ms;
+    -moz-transition: 100ms;
+    -ms-transition: 100ms;
+    -o-transition: 100ms;
+    transition: 100ms;
+}
+
+tbody td .view-btn:hover {
+    background-color: transparent;
+    color: #84c4fc;
+    -webkit-transition: 100ms;
+    -moz-transition: 100ms;
+    -ms-transition: 100ms;
+    -o-transition: 100ms;
+    transition: 100ms;
+}
+
+td {
+    padding: 10px;
+    border: none;
 }

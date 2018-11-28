@@ -18,14 +18,15 @@ body {
     padding: 20px;
 }
 
-h1 {
+.recipe h1 {
     font-size: 48px;
     font-weight: 300;
     color: #8F8F8F;
+    text-align: left;
 }
 
 .recipe-instructions {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
 }
 
@@ -37,7 +38,7 @@ h1 {
 
 .ins-init > p {
     display: inline-block;
-    width: 70%;
+    width: 100%;
     vertical-align: text-top;
 }
 
@@ -56,4 +57,13 @@ h1 {
     width: 80%;
     margin: 0 auto;
     height: 100%;
+}
+
+.recipe {
+    /* height: 100%; */
+    margin-bottom: 200px;
+}
+
+#brew-inst-title {
+    text-align: center;
 }

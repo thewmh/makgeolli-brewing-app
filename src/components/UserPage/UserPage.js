@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import UserRecipes from './UserRecipes/UserRecipes';
+import './UserPage.css';
 
 // this could also be written with destructuring parameters as:
 // const UserPage = ({ user }) => (
@@ -13,7 +14,7 @@ const UserPage = (props) => (
     </h1>
     {/* <p>Your ID is: {props.user.id}</p> */}
     <UserRecipes />
-    <LogOutButton className="log-in"  to="/"/>
+    {/* <LogOutButton className="log-in"  to="/"/> */}
   </div>
 );
 

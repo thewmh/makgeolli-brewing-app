@@ -18,6 +18,7 @@ router.get('/', (req, res) => {
 
   router.post('/', async(req, res) => {
       let recipeObj = req.body;
+      console.log(recipeObj);
       const sqlText = `INSERT INTO recipes (name, description) VALUES ($1, $2) RETURNING id`;
       pool.query(sqlText, [recipeObj.title, recipeObj.description])
         .then((response) => {
@@ -32,7 +33,7 @@ router.get('/', (req, res) => {
             })
         }) 
         .catch((error) => {
-            console.log('there was an error', error)
+            console.log('There was an error POSTing a new recipe', error)
         })
   });
 

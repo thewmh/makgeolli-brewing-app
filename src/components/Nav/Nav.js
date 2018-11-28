@@ -8,7 +8,7 @@ const Nav = (props) => (
   <div className="nav">
     <Link to="/">
       {/* <h2 className="nav-title">막걸리</h2> */}
-      <img src="./mak-logo.png" alt="막" className="막"/>
+      <img src="./mak-logo-b.png" alt="막" className="막"/>
     </Link><br/>
     <div className="nav-right">
       <Link className="nav-link" to="/">
@@ -19,13 +19,20 @@ const Nav = (props) => (
       </Link>
       {/* Show the link to the info page and the logout button if the user is logged in */}
       <Link className="nav-link" to="/user">
-          {props.user.id ? 'User Profile' : 'Login / Register'}
+          {props.user.user_id ? 'User Profile' : 'Login / Register'}
           </Link>
-      {props.user.id && (
+      {(props.user.access_level === 1) ?
+      (<>
+      <Link className="nav-link" to="/add-a-recipe">
+      Add a Recipe
+      </Link>
+      <Link className="nav-link" to="/admin/manage-users">
+      Manage Users
+      </Link>
+      </>
+      ) : (<></>)}
+      {props.user.user_id && (
         <>
-          <Link className="nav-link" to="/add-a-recipe">
-            Add a Recipe
-          </Link>
           <LogOutButton className="nav-link" to="/"></LogOutButton>
         </>
       )}
@@ -44,6 +51,7 @@ const Nav = (props) => (
 // const mapStateToProps = ({ user }) => ({ user });
 const mapStateToProps = state => ({
   user: state.user,
+  userProfile: state.user.userProfile
 });
 
 export default connect(mapStateToProps)(Nav);

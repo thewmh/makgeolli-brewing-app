@@ -18,11 +18,16 @@ import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import HomePage from '../HomePage/HomePage';
 import AddARecipe from '../AddARecipe/AddARecipe';
+import ManageUsers from '../ManageUsers/ManageUsers';
 import RecipeGallery from '../RecipeGallery/RecipeGallery';
 import RecipePage from '../RecipePage/RecipePage';
 import SuccessPage from '../SuccessPage/SuccessPage';
-
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
+
+library.add(faEye, faTrash);
 
 class App extends Component {
   componentDidMount () {
@@ -75,12 +80,17 @@ class App extends Component {
               component={InfoPage}
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
-            they will see the add a recipe page instead. */}
-            <ProtectedRoute
+            they will see the add a recipe page. */}
+            {(this.props.user.access_level === 1) ? (<ProtectedRoute
               exact
               path="/add-a-recipe"
               component={AddARecipe}
-            />
+            />) : (<></>)}
+            {(this.props.user.access_level === 1) ? (<ProtectedRoute
+              exact
+              path="/admin/manage-users"
+              component={ManageUsers}
+            />) : (<></>)}
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />
           </Switch>
@@ -89,5 +99,8 @@ class App extends Component {
       </Router>
   )}
 }
+const mapStateToProps = state => ({
+  user: state.user,
+});
 
-export default connect()(App);
+export default connect(mapStateToProps)(App);

@@ -24,7 +24,7 @@ class AddARecipe extends Component {
     submitNewRecipe = (event) => {
         event.preventDefault();
         console.log('this is the reduxState for recipes', this.props.reduxState.recipes);
-        if((this.props.reduxState.recipes.title && this.props.reduxState.recipes.description)  !== undefined && (this.props.reduxState.recipes.instructions.length && this.props.reduxState.recipes.ingredients.length) !== 0){
+        if((this.props.reduxState.recipes.title && this.props.reduxState.recipes.description)  !== undefined && (this.props.reduxState.recipes.instructions && this.props.reduxState.recipes.ingredients)){
         this.props.dispatch({ type: 'ADD_NEW_RECIPE', payload: this.props.reduxState.recipes});
         this.props.history.push(`/success`);
         }

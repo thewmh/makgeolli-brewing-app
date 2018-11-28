@@ -15,10 +15,11 @@ function* fetchRecipes() {
 
 function* getRecipeView(action) {
   try {
-    const response = yield call(axios.get, `/recipe/${action.payload}`);
+    const response = yield call(axios.get, `/recipe/${action.payload.key}`);
     // this will get the recipe for our
     // individual recipe page
-    yield put({ type: 'SET_RECIPE_VIEW', payload: response.data });
+    yield put({ type: 'SET_RECIPE_VIEW', payload: response.data});
+    action.payload.history.push(`/recipe/${action.payload.key}`);
     console.log(response.data.recipe[0].id);
   } catch (error) {
     console.log('Recipe get request failed', error);
@@ -49,7 +50,7 @@ catch (error) {
 
 function* addNewRecipe(action) {
     try {
-    yield call(axios.post, '/api/add-a-recipe', action);
+    yield call(axios.post, '/api/add-a-recipe', action.payload);
     yield put( { type: 'SET_RECIPES' } );
     yield put( { type: 'GET_USER_RECIPE_LIBRARY' } );
 }

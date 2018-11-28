@@ -8,7 +8,7 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
-    &copy; William Harrison
+    &copy; <strong>막</strong> {(new Date().getFullYear())}
   </footer>
 );
 
