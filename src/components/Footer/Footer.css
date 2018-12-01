@@ -2,9 +2,18 @@ footer {
     margin: 0 auto;
     /* margin-bottom: 10px; */
     text-align: center;
-    /* bottom: 0; */
+    bottom: 0;
     width: 100%;
     padding: 20px;
     background-color: transparent;
-    position: sticky;
+    position: relative;
+}
+
+.about-막 {
+    font-size: 16px;
+    font-weight: 900;
+    border: 1px solid #000;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
 }

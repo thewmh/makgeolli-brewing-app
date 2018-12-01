@@ -8,6 +8,7 @@ import './Footer.css'
 
 const Footer = () => (
   <footer>
+    Made with &#9829; by William Harrison <br />
     &copy; <strong>막</strong> {(new Date().getFullYear())}
   </footer>
 );

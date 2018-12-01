@@ -43,7 +43,7 @@ class UserRecipes extends Component {
                 <table>
                     <thead>
                         <tr>
-                        <th colSpan="3">{ this.props.username }'s Recipes</th>
+                        <th colSpan="3">{ this.props.first_name }'s Recipes</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,6 +61,7 @@ class UserRecipes extends Component {
 
 const mapStateToProps = reduxState => ({
     username: reduxState.user.username,
+    first_name: reduxState.user.first_name,
     user_id: reduxState.user.user_id,
     recipes: reduxState.recipes
   });

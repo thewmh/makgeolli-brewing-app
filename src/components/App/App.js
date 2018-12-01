@@ -81,7 +81,7 @@ class App extends Component {
             />
             {/* This works the same as the other protected route, except that if the user is logged in,
             they will see the add a recipe page. */}
-            {(this.props.user.access_level === 1) ? (<ProtectedRoute
+            {(this.props.user.access_level <= 2) ? (<ProtectedRoute
               exact
               path="/add-a-recipe"
               component={AddARecipe}

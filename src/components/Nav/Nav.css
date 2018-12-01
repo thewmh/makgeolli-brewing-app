@@ -47,7 +47,7 @@ outline:0;
 transition: 0ms;
 }
 
-.nav-link:hover {
+.nav-link:hover, a.active-link {
 color: #000000;
 background-color: transparent;
 text-transform: uppercase;
