@@ -1,5 +1,17 @@
-h1 {
+.about-page h1 {
     margin: 0 auto;
     text-align: center;
     margin-top: 30px;
+    transform: rotate(2deg);
+    font-weight: bolder;
+}
+
+.about-page {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.about-page p {
+    font-size: 22px;
+    line-height: 36px;
 }

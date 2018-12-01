@@ -1,5 +1,30 @@
 .막 {
   width: 10%;
+  -webkit-transition: 500ms;
+-moz-transition: 500ms;
+-ms-transition: 500ms;
+-o-transition: 500ms;
+transition: 500ms;
+transform: rotate(2deg);
+}
+
+.막:hover {
+-webkit-transition: 500ms;
+-moz-transition: 500ms;
+-ms-transition: 500ms;
+-o-transition: 500ms;
+transition: 500ms;
+background-color: red;
+transform: rotate(0deg);
+}
+
+.막:active {
+  transform: rotate(36deg);
+  -webkit-transition: 0ms;
+-moz-transition: 0ms;
+-ms-transition: 0ms;
+-o-transition: 0ms;
+transition: 0ms;
 }
 
 .nav-link {

@@ -1,0 +1,37 @@
+td .user-input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+tr {
+    width: 80%;
+}
+
+.admin-user-table tr:hover, .admin-user-table tr:hover button {
+    background-color: #fff;
+    color: #333;
+}
+
+.admin-user-table tr button:hover{
+    background-color: transparent;
+    color: red;
+}
+
+.admin-user-table {
+    width: 60%;
+}
+
+.admin-user-table td{
+    width: .1%;
+}
+
+.admin-user-table input, .admin-user-table td {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.admin-user-table button {
+    font-size: 22px;
+}

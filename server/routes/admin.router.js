@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
     console.log('In admin router');
     const sqlText = `SELECT login_information.username, user_profiles.first_name,
-    user_profiles.last_name, user_profiles.access_level
+    user_profiles.last_name, user_profiles.access_level, user_profiles.id
     FROM user_profiles JOIN login_information ON login_information.user_id = user_profiles.id;`;
     pool.query(sqlText)
     .then((result) => {

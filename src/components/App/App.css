@@ -110,6 +110,9 @@ ul:active {
 li {
     list-style: none;
 } */
+.nav {
+    transform: rotate(-2deg);
+}
 
 .log-in, .log-out, .register {
   background-color: #00acb0;

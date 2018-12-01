@@ -33,9 +33,14 @@ function* fetchAllUsers() {
   }
 }
 
+function* editUser() {
+  console.log('In EDIT_USER saga');
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
   yield takeLatest('FETCH_ALL_USERS', fetchAllUsers);
+  yield takeLatest('EDIT_USER', editUser);
 }
 
 export default userSaga;

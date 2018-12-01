@@ -24,10 +24,10 @@ import RecipePage from '../RecipePage/RecipePage';
 import SuccessPage from '../SuccessPage/SuccessPage';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faTrash, faEdit, faSave } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
-library.add(faEye, faTrash);
+library.add(faEye, faTrash, faEdit, faSave);
 
 class App extends Component {
   componentDidMount () {
@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
+          <Nav className="nav" />
           <Switch>
             {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
             {/* <Redirect exact from="/" to="/home" /> */}
