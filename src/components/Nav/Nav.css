@@ -19,7 +19,7 @@ transform: rotate(0deg);
 }
 
 .막:active {
-  transform: rotate(36deg);
+  transform: rotate(6deg);
   -webkit-transition: 0ms;
 -moz-transition: 0ms;
 -ms-transition: 0ms;

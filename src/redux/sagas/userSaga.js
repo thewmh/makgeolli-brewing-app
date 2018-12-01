@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { put, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest, call } from 'redux-saga/effects';
 
 // worker Saga: will be fired on "FETCH_USER" actions
 function* fetchUser() {
@@ -33,8 +33,14 @@ function* fetchAllUsers() {
   }
 }
 
-function* editUser() {
-  console.log('In EDIT_USER saga');
+function* editUser(action) {
+  try {
+    yield call(axios.put, '/api/admin/edit-user', action.payload);
+    yield put( { type: 'FETCH_ALL_USERS' } );
+}
+catch (error) {
+    console.log('there was an error with your post', error);
+}
 }
 
 function* userSaga() {
