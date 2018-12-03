@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './ManageUsers.css';
+import styles from './ManageUsers.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class ManageUsers extends Component {
@@ -23,13 +23,6 @@ class ManageUsers extends Component {
     //handles the changes from the edit input field
  handleChange = (name) => (event) => {
     console.log('handleChange', name, event.target.value,)
-
-    // this.setState(prevState => ({
-    //   ...prevState,
-    //   salary: {
-    //       ...prevState.salary,
-    //       min: newMinValue
-    //   }
     this.setState({
       ...this.state,
       updateUser: {...this.state.user, ...this.state.updateUser, [event.target.name]: event.target.value},
@@ -61,13 +54,13 @@ class ManageUsers extends Component {
   renderEditButton = (user) => {
     if(this.state.edit === true && this.state.user === user){
       return (
-        <button onClick={this.handleSave}>
+        <button className="borderless-btn" onClick={this.handleSave}>
         <FontAwesomeIcon icon="save" />
         </button>
       );
     }else{
         return(
-          <button onClick={this.handleEdit(user)}>
+          <button className="borderless-btn" onClick={this.handleEdit(user)}>
           <FontAwesomeIcon icon="edit" />
           </button>
           
@@ -85,7 +78,7 @@ class ManageUsers extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                {this.props.reduxState.admin.map((user, index) => (
+                {this.props.reduxState.admin.users.map((user, index) => (
                         <>
                         <tr key={index}>
                         {(this.state.edit === true && this.state.user !== user) ?
@@ -94,7 +87,7 @@ class ManageUsers extends Component {
                         <td><input className="user-input" name="username" placeholder={user.username} onChange={this.handleChange("username")}/></td>
                         <td><input className="user-input" name="first_name" placeholder={user.first_name} onChange={this.handleChange("first_name")}/></td>
                         <td><input className="user-input" name="last_name" placeholder={user.last_name} onChange={this.handleChange("last_name")}/></td>
-                        <td><input className="user-input" name="access_level" placeholder={user.access_level} onChange={this.handleChange("access_level")}/></td></>)}<td>{this.renderEditButton(user)}</td><td><button><FontAwesomeIcon icon="trash" /></button></td>
+                        <td><input className="user-input" name="access_level" placeholder={user.access_level} onChange={this.handleChange("access_level")}/></td></>)}<td>{this.renderEditButton(user)}</td><td><button className="borderless-btn"><FontAwesomeIcon icon="trash" /></button></td>
                         </tr>
                         </>
                     ))}

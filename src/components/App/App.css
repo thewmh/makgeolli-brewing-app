@@ -22,96 +22,9 @@ body {
     height: 100%;
     margin-bottom: 200px;
 }
-/*
-.add-description {
-    display: inline-block;
-    width: 40%;
-}
 
-.add-ingredients {
-    background-color: transparent;
-    width: 40%;
-    height: 250px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 2px;
-    display: inline-block;
-}
-
-input {
-    margin: 5px;
-    border: none;
-    border-bottom: 2px solid fuchsia;
-    font-size: 15px;
-}
-
-.instruction-form > input {
-    width: 20%;
-}
-
-textarea {
-    width: 100%;
-    height: 25vh;
-}
-
-button, select, button:focus, select:focus, input:focus {
-    border: none;
-    outline: transparent;
-}
-
-button {
-    font-size: 35px;
-}
-
-button:hover {
-    background-color: #444;
-    color: #fff;
-}
-
-select {
-    margin: 5px;
-    width: 100px;
-    padding: 5px 35px 5px 5px;
-    font-size: 16px;
-    border: 1px solid black;
-    height: 34px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;  
-    background-color: transparent;
-}
-
-select:focus {
-    outline: none;
-    border: 1px solid black;
-}
-
-option {
-    border: 0;
-    border-bottom: 1px solid #444;
-    padding: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-  }
-
-ul {
-    text-align: left;
-    position: absolute;
-    padding: 0;
-    top: 0;
-    left: 0;
-    display: none;
-}
-
-ul:active {
-    display: block;
-  }
-
-li {
-    list-style: none;
-} */
 .nav {
-    transform: rotate(-2deg);
+    transform: rotate(-.5deg);
 }
 
 .log-in, .log-out, .register {
@@ -140,4 +53,28 @@ li {
     outline:0;
     border-bottom:1px solid #444; 
     cursor: pointer;
+}
+
+button {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    color: #333;
+    border: 2px solid #333;
+    background-color: transparent;
+    -webkit-transition: 100ms;
+    -moz-transition: 100ms;
+    -ms-transition: 100ms;
+    -o-transition: 100ms;
+    transition: 100ms;
+    padding: 10px;
+}
+
+.borderless-btn, .borderless-btn:focus, .borderless-btn:active {
+    border: none;
+    outline: none;
+}
+
+table {
+    font-size: 22px;
 }

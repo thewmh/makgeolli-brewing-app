@@ -147,22 +147,23 @@ input.question:invalid ~ input[type="submit"], textarea.question:invalid ~ input
 }
 
 button, select, button:focus, select:focus, input:focus {
-    border: none;
-    outline: transparent;
+    /* border: none; */
+    /* outline: transparent; */
 }
 
-button {
+/* button {
     font-size: 30px;
     background-color: transparent;
     padding: 10px;
-    /* float: right; */
-    /* height: 34px; */
+    border: 2px solid #333;
+    color: #333;
     -webkit-transition: 1000ms;
     -moz-transition: 1000ms;
     -ms-transition: 1000ms;
     -o-transition: 1000ms;
     transition: 1000ms;
-}
+    margin-left: 10%;
+} */
 
 .add-a-recipe button {
     float: right;
@@ -171,11 +172,11 @@ button {
 button:hover {
     background-color: #444;
     color: #fff;
-    -webkit-transition: 1000ms;
-    -moz-transition: 1000ms;
-    -ms-transition: 1000ms;
-    -o-transition: 1000ms;
-    transition: 1000ms;
+    -webkit-transition: 100ms;
+    -moz-transition: 100ms;
+    -ms-transition: 100ms;
+    -o-transition: 100ms;
+    transition: 100ms;
 }
 
 select {

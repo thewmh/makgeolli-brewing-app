@@ -7,12 +7,19 @@ router.get('/', (req, res) => {
     console.log('In admin router');
     const sqlText = `SELECT login_information.username, user_profiles.first_name,
     user_profiles.last_name, user_profiles.access_level, user_profiles.id
-    FROM user_profiles JOIN login_information ON login_information.user_id = user_profiles.id;`;
+    FROM user_profiles JOIN login_information ON login_information.user_id = user_profiles.id
+    ORDER BY user_profiles.access_level;`;
+    const sqlText_Recipes = `SELECT * FROM recipes`; // This query is spot on, thanks Postico!
     pool.query(sqlText)
     .then((result) => {
+            users = result.rows
+            pool.query(sqlText_Recipes)
+            .then((result) => {
+                recipes = result.rows    
+            adminObj = {users, recipes}
         console.log('GET got this back from the server', result);
-        res.send(result.rows); // db rows
-    })
+        res.send(adminObj); // db rows
+    })})
     .catch((error) => {
         console.log('GET error from the server', error);
         res.sendStatus(500); // A good server always responds!

@@ -13,6 +13,10 @@ class UserRecipes extends Component {
 
     componentDidMount() {
         this.getUserRecipeLibrary();
+        console.log('Logged in users access level is', this.props.access_level)
+        if(this.props.access_level === 1) {
+          this.props.dispatch({type: 'FETCH_ALL_USERS'})
+          }
     }
 
     getUserRecipeLibrary() {
@@ -49,7 +53,7 @@ class UserRecipes extends Component {
                     <tbody>
                 {this.props.recipes.userRecipes.map(recipe => (
                     <tr key={recipe.user_recipe_id}>
-                        <td>{recipe.name}</td><td><button className="view-btn" key={recipe.id} alt={recipe.id} onClick={this.viewRecipe(recipe.id)}><FontAwesomeIcon icon="eye" /></button></td><td><button className="delete-btn" key={recipe.user_recipe_id} onClick={() => this.deleteRecipeFromUserProfile(recipe.user_recipe_id)}><FontAwesomeIcon icon="trash" /></button></td>
+                        <td>{recipe.name}</td><td><button className="view-btn borderless-btn" key={recipe.id} alt={recipe.id} onClick={this.viewRecipe(recipe.id)}><FontAwesomeIcon icon="eye" /></button></td><td><button className="delete-btn borderless-btn" key={recipe.user_recipe_id} onClick={() => this.deleteRecipeFromUserProfile(recipe.user_recipe_id)}><FontAwesomeIcon icon="trash" /></button></td>
                     </tr>
                 ))}
                     </tbody>
@@ -63,7 +67,8 @@ const mapStateToProps = reduxState => ({
     username: reduxState.user.username,
     first_name: reduxState.user.first_name,
     user_id: reduxState.user.user_id,
-    recipes: reduxState.recipes
+    recipes: reduxState.recipes,
+    access_level: reduxState.user.access_level,
   });
 
 export default connect(mapStateToProps)(withRouter(UserRecipes));

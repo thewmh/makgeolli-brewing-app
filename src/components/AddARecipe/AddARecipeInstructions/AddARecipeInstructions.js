@@ -59,14 +59,14 @@ class AddARecipeInstructions extends Component {
                     {/* <textarea id="recipe-description" name="description"
                           value={this.state.description} onChange={this.handleChange} class="question" required autocomplete="off" />
                 <label for="recipe-description"><span>Please describe your recipe</span></label> */}
-                    <label for="recipe-instruction" value={instruction.instruction_number}><span>Instruction Number {i+1}</span></label>
+                    <label for="recipe-instruction" value={instruction.instruction_number}></label>
                     <textarea type="text" name="instruction_details" 
                     id="recipe-instruction" value={instruction.instruction_details}
                     onChange={this.handleChange(i)} class="question" required autocomplete="off"/>
                     <label for="recipe-instruction"><span>Enter details of step {i+1}</span></label>
                     {this.state.instructions.length <= 1 ? (<></> ) : (<button onClick={this.handleRemoveInstruction(i)}>Remove this Instruction -</button>) }
                     </>
-                ))}<br />
+                ))}<br /><br /><br />
                 <button onClick={this.handleAddInstruction}>Add another Instruction +</button>
                 <br /><br /><br />
                 <button onClick={this.saveInstructionState}>Save Instructions</button>

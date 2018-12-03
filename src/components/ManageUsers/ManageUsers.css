@@ -8,14 +8,20 @@ tr {
     width: 80%;
 }
 
-.admin-user-table tr:hover, .admin-user-table tr:hover button {
+/* .admin-user-table tr:hover, .admin-user-table tr:hover button {
     background-color: #fff;
     color: #333;
 }
 
+.admin-user-table thead tr:hover {
+    background-color: transparent;
+    color: #333;
+} */
+
 .admin-user-table tr button:hover{
     background-color: transparent;
     color: red;
+    transform: scale(1.2);
 }
 
 .admin-user-table {

@@ -9,7 +9,7 @@ table, td, tr {
     border-collapse: collapse;
 }
 
-tr, button {
+/* tr, button {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 300;
     font-size: 22px;
@@ -20,9 +20,9 @@ tr, button {
     -ms-transition: 1000ms;
     -o-transition: 1000ms;
     transition: 1000ms;
-}
+} */
 
-tbody > tr:hover {
+/* tbody > tr:hover {
     background-color: #333;
     color: #fff;
     -webkit-transition: 1000ms;
@@ -30,11 +30,12 @@ tbody > tr:hover {
     -ms-transition: 1000ms;
     -o-transition: 1000ms;
     transition: 1000ms;
-}
+} */
 
-tr:hover button {
-    background-color: transparent;
-    color: #fff;
+tr button:hover {
+    /* background-color: transparent;
+    color: #fff; */
+    transform: scale(1.2);
 }
 
 tbody td .delete-btn:hover {

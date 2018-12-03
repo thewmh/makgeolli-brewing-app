@@ -17,6 +17,10 @@ const Nav = (props) => (
         and call this link 'Login / Register' if they are not */}
         Recipe Gallery
       </Link>
+      {/* Show the link to the info page and the logout button if the user is logged in */}
+      <Link className="nav-link" to="/user" activeClassName="active-link">
+          {props.user.user_id ? 'User Profile' : 'Login / Register'}
+          </Link>
       {(props.user.access_level <= 2) ?
       (<>
       <Link className="nav-link" to="/add-a-recipe" activeClassName="active-link">
@@ -37,13 +41,9 @@ const Nav = (props) => (
       </Link>
       {props.user.user_id && (
         <>
-          <LogOutButton className="nav-link" to="/" activeClassName="active-link"></LogOutButton>
+          <LogOutButton className="nav-link" to="/"></LogOutButton>
         </>
       )}
-      {/* Show the link to the info page and the logout button if the user is logged in */}
-      <Link className="nav-link" to="/user" activeClassName="active-link">
-        {props.user.user_id ? 'User Profile' : 'Login / Register'}
-      </Link>
     </div>
   </div>
 );

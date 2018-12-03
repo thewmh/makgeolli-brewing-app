@@ -1,16 +1,38 @@
 .recipe-wrap {
-    margin: auto;
+    margin: 0 auto;
     margin-top: 30px;
-    width: 100%;
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .recipe-gallery-card {
-    width: 25%;
-    margin: 0 4%;
-    display: inline-block;
-    vertical-align: text-top;
-    
+    /* width: 25%; */
+    /* display: flex; */
+    flex-wrap: wrap;
+    order: 1;
+    flex: 1 1 30%;
+    margin: 1%;
 }
+
+/* .recipe-gallery-card:nth-child(3n+1) {
+    margin:auto auto auto 2%;
+    float: left;
+}
+
+.recipe-gallery-card:nth-child(3n+3) {
+    margin:auto 2% auto auto;
+    float: right;
+}
+
+.recipe-gallery-card:nth-child(3n+2) {
+    position:relative;
+    left:0;
+    right:0;
+    margin:auto 2%;
+} */
 
 h1 {
     margin-top: 0;

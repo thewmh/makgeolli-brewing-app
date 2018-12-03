@@ -31,7 +31,7 @@ library.add(faEye, faTrash, faEdit, faSave);
 
 class App extends Component {
   componentDidMount () {
-    this.props.dispatch({type: 'FETCH_USER'})
+    this.props.dispatch({type: 'FETCH_USER'});
   }
 
   render() {
@@ -101,6 +101,7 @@ class App extends Component {
 }
 const mapStateToProps = state => ({
   user: state.user,
+  access_level: state.user.access_level,
 });
 
 export default connect(mapStateToProps)(App);
