@@ -94,8 +94,9 @@ class ManageUsers extends Component {
 
     render() {
         return (
-            <div>
-                <table className="admin-user-table">
+            <div className="manage-users">
+              <h1>Manage Users</h1>
+                {this.props.reduxState.admin.users ? (<table className="admin-user-table">
                     <thead>
                         <tr>
                             <th>Username</th><th>First Name</th><th>Last Name</th><th>Access Level</th><th>Edit User</th><th>Delete User</th>
@@ -116,7 +117,7 @@ class ManageUsers extends Component {
                         </>
                     ))}
                     </tbody>
-                </table>
+                </table>) : (<></>)}
             </div>
         );
     }

@@ -35,7 +35,7 @@ class RegisterPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="register-div">
         {this.props.errors.registrationMessage && (
           <h2
             className="alert"

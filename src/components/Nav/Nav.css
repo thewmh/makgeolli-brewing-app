@@ -14,18 +14,18 @@ transform: rotate(2deg);
 -ms-transition: 500ms;
 -o-transition: 500ms;
 transition: 500ms;
-background-color: red;
+/* background-color: red; */
 transform: rotate(0deg);
 }
 
-.막:active {
+/* .막:active {
   transform: rotate(6deg);
   -webkit-transition: 0ms;
 -moz-transition: 0ms;
 -ms-transition: 0ms;
 -o-transition: 0ms;
 transition: 0ms;
-}
+} */
 
 .nav-link {
 color: #000000;

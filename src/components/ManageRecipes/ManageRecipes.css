@@ -1,0 +1,9 @@
+.manage-recipes h1 {
+    text-align: center;
+}
+
+tr button:hover{
+    background-color: transparent;
+    color: red;
+    transform: scale(1.2);
+}

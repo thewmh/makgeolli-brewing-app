@@ -41,3 +41,7 @@ tr {
 .admin-user-table button {
     font-size: 22px;
 }
+
+.manage-users h1 {
+    text-align: center;
+}

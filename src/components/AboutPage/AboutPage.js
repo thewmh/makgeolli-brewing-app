@@ -12,8 +12,9 @@ const AboutPage = () => (
       <h1>
         About 막
       </h1>
-      <p>Makgeolli (Korean: 막걸리, [mak.k͈ʌl.li]), sometimes anglicized to makkoli (/ˈmækəli/,[1] MAK-ə-lee), is a Korean alcoholic beverage. The milky, off-white and lightly sparkling rice wine has a slight viscosity that tastes slightly sweet, tangy, bitter, and astringent. Chalky sediment gives it a cloudy appearance.
-      As a low proof drink of six to nine percent alcohol by volume, it is often considered a happy, communal beverage. In Korea, makgeolli is often unpasteurized, and the wine continues to mature in the bottle. Because of the short shelf life of unpasteurized "draft" makgeolli, many exported makgeolli undergo pasteurization, which deprives the beverage of complex enzymes and flavor compounds.</p>
+      <h3>According to Wikipedia:</h3>
+      <blockquote><p>Makgeolli (Korean: 막걸리, [mak.k͈ʌl.li]), sometimes anglicized to makkoli (/ˈmækəli/,[1] MAK-ə-lee), is a Korean alcoholic beverage. The milky, off-white and lightly sparkling rice wine has a slight viscosity that tastes slightly sweet, tangy, bitter, and astringent. Chalky sediment gives it a cloudy appearance.
+      As a low proof drink of six to nine percent alcohol by volume, it is often considered a happy, communal beverage. In Korea, makgeolli is often unpasteurized, and the wine continues to mature in the bottle. Because of the short shelf life of unpasteurized "draft" makgeolli, many exported makgeolli undergo pasteurization, which deprives the beverage of complex enzymes and flavor compounds.</p></blockquote>
       <h1>
         Technologies Used
       </h1>

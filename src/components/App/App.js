@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import HomePage from '../HomePage/HomePage';
 import AddARecipe from '../AddARecipe/AddARecipe';
 import ManageUsers from '../ManageUsers/ManageUsers';
+import ManageRecipes from '../ManageRecipes/ManageRecipes';
 import RecipeGallery from '../RecipeGallery/RecipeGallery';
 import RecipePage from '../RecipePage/RecipePage';
 import SuccessPage from '../SuccessPage/SuccessPage';
@@ -90,6 +91,11 @@ class App extends Component {
               exact
               path="/admin/manage-users"
               component={ManageUsers}
+            />) : (<></>)}
+            {(this.props.user.access_level === 1) ? (<ProtectedRoute
+              exact
+              path="/admin/manage-recipes"
+              component={ManageRecipes}
             />) : (<></>)}
             {/* If none of the other routes matched, we will show a 404. */}
             <Route render={() => <h1>404</h1>} />

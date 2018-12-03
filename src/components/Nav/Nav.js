@@ -33,6 +33,9 @@ const Nav = (props) => (
       <Link className="nav-link" to="/admin/manage-users" activeClassName="active-link">
       Manage Users
       </Link>
+      <Link className="nav-link" to="/admin/manage-recipes" activeClassName="active-link">
+      Manage Recipes
+      </Link>
       </>
       ) : (<></>)}
       {/* Always show this link since the about page is not protected */}

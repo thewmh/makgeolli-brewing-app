@@ -43,6 +43,11 @@ body {
   background-color: #008183;
 }
 
+.login-div, .register-div {
+    margin: 0 auto;
+    width: 80%;
+}
+
 /* This line makes the "Register" and "Login" buttons look like links */
 .link-button {
     background:none;
