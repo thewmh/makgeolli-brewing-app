@@ -40,6 +40,7 @@ app.use(`/my-recipes`, myRecipesRouter);
 app.use(`/api/user/profile`, userProfileRouter);
 app.use(`/api/admin/manage-users`, adminRouter);
 app.use(`/api/admin/edit-user`, adminRouter);
+app.use(`/api/admin/delete-user`, adminRouter);
 
 // Serve static files
 app.use(express.static('build'));

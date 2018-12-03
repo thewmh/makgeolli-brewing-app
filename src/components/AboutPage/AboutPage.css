@@ -15,3 +15,21 @@
     font-size: 22px;
     line-height: 36px;
 }
+
+.about-page ul {
+    text-align: center;
+    list-style-type: none;
+    font-size: 22px;
+    line-height: 36px;
+}
+
+.about-page li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.about-page li a:hover {
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bolder;
+}

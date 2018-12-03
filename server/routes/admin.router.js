@@ -52,6 +52,20 @@ router.put('/', (req, res) => {
         console.log('error with admin router PUT request', error);
         res.sendStatus(500);
     })
+});
+
+router.delete('/', (req, res) => {
+    console.log('In admin router DELETE request', req.query.user_id);
+    const sqlText = `DELETE FROM user_profiles where id = $1`;
+    pool.query(sqlText, [req.query.user_id])
+    .then((result) => {
+        console.log('User DELETE was a success', result);
+        res.sendStatus(200);
+    })
+    .catch((error) => {
+        console.log('DELETE error in admin.router', error);
+        res.sendStatus(500);
+    })
 })
 
   module.exports = router;

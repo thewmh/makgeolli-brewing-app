@@ -43,10 +43,22 @@ catch (error) {
 }
 }
 
+function* deleteUser(action) {
+  try {
+    console.log(action.payload);
+    yield call(axios.delete, `/api/admin/delete-user/?user_id=${action.payload}`);
+    yield put( { type: 'FETCH_ALL_USERS' } );
+}
+catch (error) {
+    console.log('there was an error with your DELETE', error);
+  }
+}
+
 function* userSaga() {
   yield takeLatest('FETCH_USER', fetchUser);
   yield takeLatest('FETCH_ALL_USERS', fetchAllUsers);
   yield takeLatest('EDIT_USER', editUser);
+  yield takeLatest('REMOVE_USER', deleteUser);
 }
 
 export default userSaga;

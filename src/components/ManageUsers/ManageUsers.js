@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styles from './ManageUsers.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+
 class ManageUsers extends Component {
 
     state = {
@@ -49,6 +50,12 @@ class ManageUsers extends Component {
     });
     console.log(this.state.user);
   }
+
+  handleDelete = (user) => () => {
+    console.log('Clicked Delete button', user)
+    // alert('Sure about that?');
+    this.props.dispatch({type: 'REMOVE_USER', payload: user.id})
+  }
  
   //renders the edit/save button
   renderEditButton = (user) => {
@@ -87,7 +94,7 @@ class ManageUsers extends Component {
                         <td><input className="user-input" name="username" placeholder={user.username} onChange={this.handleChange("username")}/></td>
                         <td><input className="user-input" name="first_name" placeholder={user.first_name} onChange={this.handleChange("first_name")}/></td>
                         <td><input className="user-input" name="last_name" placeholder={user.last_name} onChange={this.handleChange("last_name")}/></td>
-                        <td><input className="user-input" name="access_level" placeholder={user.access_level} onChange={this.handleChange("access_level")}/></td></>)}<td>{this.renderEditButton(user)}</td><td><button className="borderless-btn"><FontAwesomeIcon icon="trash" /></button></td>
+                        <td><input className="user-input" name="access_level" placeholder={user.access_level} onChange={this.handleChange("access_level")}/></td></>)}<td>{this.renderEditButton(user)}</td><td><button className="borderless-btn" onClick={this.handleDelete(user)}><FontAwesomeIcon icon="trash" /></button></td>
                         </tr>
                         </>
                     ))}

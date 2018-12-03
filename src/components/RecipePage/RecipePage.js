@@ -37,7 +37,7 @@ class RecipePage extends Component {
                         </tr>
                         </>
                     ))}
-                    <tr><td><button>Calculate your own</button></td></tr>
+                    {/* <tr><td><button>Calculate your own</button></td></tr> */}
                     </tbody>
                     </table>
                     </div>
