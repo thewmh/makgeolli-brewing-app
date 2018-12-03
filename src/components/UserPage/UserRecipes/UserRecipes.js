@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import './UserRecipes.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withRouter } from 'react-router';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class UserRecipes extends Component {
 
@@ -27,9 +29,25 @@ class UserRecipes extends Component {
     }
 
     deleteRecipeFromUserProfile = (key) => {
-        const payload = key;
-        const action = {type: 'DELETE_USER_RECIPE_FROM_LIBRARY', payload};
-        this.props.dispatch(action);
+        confirmAlert({
+            title: 'Do you really want to delete this recipe from your library?',
+            message: `Recipe will be removed from your account.
+                    This action is irreversible`,
+            buttons: [
+                {
+                    label: 'No, just kidding.',
+                  //   onClick: () => alert('Click No')
+                  },
+                {
+                  label: 'Yeah, it\'s a garbage recipe.',
+                  onClick: () => {
+                    const payload = key;
+                    const action = {type: 'DELETE_USER_RECIPE_FROM_LIBRARY', payload};
+                    this.props.dispatch(action);
+                  }
+                },
+              ]
+        })
     }
 
     viewRecipe = (key) => (event) => {

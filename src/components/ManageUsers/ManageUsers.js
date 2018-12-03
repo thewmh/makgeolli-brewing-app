@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styles from './ManageUsers.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 
 class ManageUsers extends Component {
@@ -54,7 +56,22 @@ class ManageUsers extends Component {
   handleDelete = (user) => () => {
     console.log('Clicked Delete button', user)
     // alert('Sure about that?');
-    this.props.dispatch({type: 'REMOVE_USER', payload: user.id})
+    confirmAlert({
+      title: `Definitely want to delete ${user.username} from 막?`,
+      buttons: [
+          {
+              label: 'No, just kidding.',
+            //   onClick: () => alert('Click No')
+            },
+          {
+            label: `Yeah, get ${user.username} outta here!`,
+            onClick: () => {
+              this.props.dispatch({type: 'REMOVE_USER', payload: user.id})
+            }
+          },
+        ],
+        message: `This action is irreversible`,
+  })
   }
  
   //renders the edit/save button
