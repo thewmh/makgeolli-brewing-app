@@ -17,6 +17,13 @@ class ManageUsers extends Component {
           access_level: 0,
           id: 0,
         },
+        updateUser: {
+          username: '',
+          first_name: '',
+          last_name: '',
+          access_level: 0,
+          id: 0,
+        },
     }
 
     componentDidMount(){
@@ -49,6 +56,7 @@ class ManageUsers extends Component {
     this.setState({
       ...this.state,
       user: user,
+      updateUser: user,
     });
     console.log(this.state.user);
   }
@@ -112,7 +120,11 @@ class ManageUsers extends Component {
                         <td><input className="user-input" name="username" placeholder={user.username} onChange={this.handleChange("username")}/></td>
                         <td><input className="user-input" name="first_name" placeholder={user.first_name} onChange={this.handleChange("first_name")}/></td>
                         <td><input className="user-input" name="last_name" placeholder={user.last_name} onChange={this.handleChange("last_name")}/></td>
-                        <td><input className="user-input" name="access_level" placeholder={user.access_level} onChange={this.handleChange("access_level")}/></td></>)}<td>{this.renderEditButton(user)}</td><td><button className="borderless-btn" onClick={this.handleDelete(user)}><FontAwesomeIcon icon="trash" /></button></td>
+                        <td><select className="user-input" name="access_level" value={this.state.updateUser.access_level} onChange={this.handleChange("access_level")}>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                        </select></td></>)}<td>{this.renderEditButton(user)}</td><td><button className="borderless-btn" onClick={this.handleDelete(user)}><FontAwesomeIcon icon="trash" /></button></td>
                         </tr>
                         </>
                     ))}

@@ -23,6 +23,11 @@ class ManageRecipes extends Component {
     }
 
     handleEdit = (recipe) => () => {
+        this.setState({
+            ...this.state,
+            recipe: recipe,
+            updateRecipe: recipe,
+          });
         console.log(recipe);
     }
 
@@ -47,6 +52,24 @@ class ManageRecipes extends Component {
   })
   }
 
+  //renders the edit/save button
+  renderEditButton = (recipe) => {
+    if(this.state.edit === true && this.state.recipe === recipe){
+      return (
+        <button className="borderless-btn" onClick={this.handleSave}>
+        <FontAwesomeIcon icon="save" />
+        </button>
+      );
+    }else{
+        return(
+          <button className="borderless-btn" onClick={this.handleEdit(recipe)}>
+          <FontAwesomeIcon icon="edit" />
+          </button>
+          
+      )
+    }
+  }
+
     render() {
         return (
             <div className="manage-recipes">
@@ -62,8 +85,7 @@ class ManageRecipes extends Component {
                         <>
                         <tr key={index}>
                         <><td>{recipe.name}</td><td>{recipe.is_published === 1 ? (<>Yes</>) : (<>No</>)}</td>
-                        <td>{recipe.added_by}</td></><td><button className="borderless-btn" onClick={this.handleEdit(recipe.id)}>
-          <FontAwesomeIcon icon="edit" /></button></td><td><button className="borderless-btn" onClick={this.handleDelete(recipe)}><FontAwesomeIcon icon="trash" /></button></td></tr></>))}
+                        <td>{recipe.added_by}</td></><td>{this.renderEditButton(recipe)}</td><td><button className="borderless-btn" onClick={this.handleDelete(recipe)}><FontAwesomeIcon icon="trash" /></button></td></tr></>))}
                     </tbody>
                 </table>) : (<></>)}
             </div>
