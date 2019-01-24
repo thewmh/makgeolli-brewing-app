@@ -107,7 +107,7 @@ class ManageUsers extends Component {
                 {this.props.reduxState.admin.users ? (<table className="admin-user-table">
                     <thead>
                         <tr>
-                            <th>Username</th><th>First Name</th><th>Last Name</th><th>Access Level</th><th>Edit User</th><th>Delete User</th>
+                            <th>Username</th><th>First Name</th><th>Last Name</th><th title={"Admin: Has full access to all features of Mak. Can manage recipes and users\nContributor: Can add new recipes\nRegistered User: Can add recipes to their personal recipe library"}>Access Level</th><th>Edit User</th><th>Delete User</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,14 +116,14 @@ class ManageUsers extends Component {
                         <tr key={index}>
                         {(this.state.edit === true && this.state.user !== user) ?
                         (<><td>{user.username}</td><td>{user.first_name}</td><td>{user.last_name}</td>
-                        <td>{user.access_level}</td></>) : (<>
+                        <td>{(user.access_level === 1) ? <td>Admin</td> : (user.access_level === 2) ? <td>Contributor</td> : (<td>Registered User</td>)}</td></>) : (<>
                         <td><input className="user-input" name="username" placeholder={user.username} onChange={this.handleChange("username")}/></td>
                         <td><input className="user-input" name="first_name" placeholder={user.first_name} onChange={this.handleChange("first_name")}/></td>
                         <td><input className="user-input" name="last_name" placeholder={user.last_name} onChange={this.handleChange("last_name")}/></td>
                         <td><select className="user-input" name="access_level" value={this.state.updateUser.access_level} onChange={this.handleChange("access_level")}>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
+                          <option value="1">Admin</option>
+                          <option value="2">Contributor</option>
+                          <option value="3">Registered User</option>
                         </select></td></>)}<td>{this.renderEditButton(user)}</td><td><button className="borderless-btn" onClick={this.handleDelete(user)}><FontAwesomeIcon icon="trash" /></button></td>
                         </tr>
                         </>
