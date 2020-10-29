@@ -20,7 +20,7 @@ function* getRecipeView(action) {
     // individual recipe page
     yield put({ type: 'SET_RECIPE_VIEW', payload: response.data});
     action.payload.history.push(`/recipe/${action.payload.key}`);
-    console.log(response.data.recipe[0].id);
+    console.log(response.data.recipe[0]);
   } catch (error) {
     console.log('Recipe get request failed', error);
   }

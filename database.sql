@@ -13,7 +13,8 @@ id SERIAL PRIMARY KEY,
 name VARCHAR(255),
 is_published integer,
 description TEXT,
-image TEXT
+image TEXT,
+added_by integer REFERENCES user_profiles(id)
 );
 
 CREATE TABLE "ingredient_units" (
