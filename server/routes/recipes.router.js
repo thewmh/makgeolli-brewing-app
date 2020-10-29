@@ -20,8 +20,8 @@ router.get('/', (req, res) => {
       let recipeObj = req.body;
       let user_id = req.user.user_id;
       console.log(recipeObj);
-      const sqlText = `INSERT INTO recipes (name, description, added_by) VALUES ($1, $2, $3) RETURNING id`;
-      pool.query(sqlText, [recipeObj.title, recipeObj.description, user_id])
+      const sqlText = `INSERT INTO recipes (name, description, added_by, is_published) VALUES ($1, $2, $3, $4) RETURNING id`;
+      pool.query(sqlText, [recipeObj.title, recipeObj.description, user_id, 1])
         .then((response) => {
             console.log(response.rows[0].id);
             const sqlText = `INSERT INTO recipe_instruction_list (instruction_number, instruction_details, recipes_id) VALUES ($1, $2, $3)`;
