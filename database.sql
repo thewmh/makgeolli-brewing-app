@@ -13,7 +13,8 @@ id SERIAL PRIMARY KEY,
 name VARCHAR(255),
 is_published integer,
 description TEXT,
-image TEXT
+image TEXT,
+added_by integer REFERENCES user_profiles(id)
 );
 
 CREATE TABLE "ingredient_units" (
@@ -52,7 +53,6 @@ CREATE TABLE "recipe_ingredient_list" (
 id SERIAL PRIMARY KEY,
 name VARCHAR(255),
 quantity integer,
-units_id integer REFERENCES ingredient_units(id),
 description TEXT,
 recipes_id integer REFERENCES recipes(id)
 );
