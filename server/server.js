@@ -32,7 +32,7 @@ app.use(passport.session());
 /* Routes */
 app.use('/api/user', userRouter);
 app.use('/api/ingredient-units', ingredientUnitsRouter);
-app.use('/recipes', recipesRouter);
+app.use('/api/recipes', recipesRouter);
 app.use('/api/add-a-recipe', recipesRouter);
 app.use(`/recipe`, individualRecipeRouter);
 app.use(`/user/recipes`, addRecipeToLibrary);
