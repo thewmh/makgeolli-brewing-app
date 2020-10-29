@@ -15,7 +15,7 @@ class RecipeGallery extends Component {
       }
       
       getRecipes = () => {
-        axios.get('/recipes').then( (response) => {
+        axios.get('/api/recipes').then( (response) => {
           console.log(response.data);
           this.setState({
             recipeData: response.data
