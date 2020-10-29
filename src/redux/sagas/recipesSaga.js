@@ -49,6 +49,7 @@ catch (error) {
 }
 
 function* addNewRecipe(action) {
+    console.log(action.payload)
     try {
     yield call(axios.post, '/api/add-a-recipe', action.payload);
     yield put( { type: 'SET_RECIPES' } );

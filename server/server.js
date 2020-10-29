@@ -30,10 +30,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 /* Routes */
-app.use('/api/user', userRouter);
-app.use('/api/ingredient-units', ingredientUnitsRouter);
-app.use('/api/recipes', recipesRouter);
-app.use('/api/add-a-recipe', addNewRecipe);
+app.use(`/api/user`, userRouter);
+app.use(`/api/ingredient-units`, ingredientUnitsRouter);
+app.use(`/api/recipes`, recipesRouter);
+app.use(`/api/add-a-recipe`, addNewRecipe);
 app.use(`/recipe`, individualRecipeRouter);
 app.use(`/user/recipes`, addRecipeToLibrary);
 app.use(`/my-recipes`, myRecipesRouter);
