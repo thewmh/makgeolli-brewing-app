@@ -10,6 +10,7 @@ image TEXT
 CREATE TABLE "recipes" (
 id INT PRIMARY KEY,
 name VARCHAR(255),
+is_published INT,
 description TEXT,
 image TEXT
 );
