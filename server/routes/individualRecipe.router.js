@@ -28,7 +28,7 @@ router.get(`/:key`, (req, res) => {
   //   console.log('THIS IS THE RECIPE ID', recipeId);
     const sqlText_1 = `SELECT * FROM recipes WHERE recipes.id = $1;`;
     const sqlText_2 = `SELECT instruction_number, instruction_details FROM recipe_instruction_list WHERE recipe_instruction_list.recipes_id = $1 ORDER BY instruction_number;`;
-    const sqlText_3 = `SELECT recipe_ingredient_list.name as ingredient_name, recipe_ingredient_list.quantity as ingredient_quantity, ingredient_units.name as ingredient_measure FROM recipe_ingredient_list JOIN ingredient_units ON ingredient_units.id WHERE recipe_ingredient_list.recipes_id = $1;`;
+    const sqlText_3 = `SELECT recipe_ingredient_list.name as ingredient_name, recipe_ingredient_list.quantity as ingredient_quantity, ingredient_units.name as ingredient_measure FROM recipe_ingredient_list JOIN ingredient_units ON ingredient_units.id = recipe_ingredient_list.units_id WHERE recipe_ingredient_list.recipes_id = $1;`;
     pool.query(sqlText_1, [recipeId]).then( rows => {
         recipe = rows.rows
     pool.query(sqlText_2, [recipeId]).then( rows => {
