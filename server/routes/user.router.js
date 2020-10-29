@@ -22,7 +22,7 @@ router.post('/register', (req, res, next) => {
   const last_name = req.body.last_name;
   console.log(username, password, first_name, last_name);
   const queryText = `INSERT INTO user_profiles (first_name, last_name, access_level) VALUES ($1, $2, $3) RETURNING id`;
-  pool.query(queryText, [first_name, last_name, 3])
+  pool.query(queryText, [first_name, last_name, 2])
     .then((result) => { 
       const queryText = `INSERT INTO login_information (username, password, user_id) VALUES ($1, $2, $3)`;
       pool.query(queryText, [username, password, result.rows[0].id])
