@@ -22,7 +22,7 @@ class RecipePage extends Component {
         this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: {key: recipeKey}});
     }
     
-      componentDidMount () {
+      componentWillMount () {
         this.getRecipe();
       }
 
