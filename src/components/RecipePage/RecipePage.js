@@ -15,6 +15,14 @@ class RecipePage extends Component {
     //     ))
     //   }
 
+    getRecipe = (key) => (event) => {
+        this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: {key: key, history: this.props.history}});
+    }
+    
+      componentDidMount () {
+        this.getRecipe();
+      }
+
     render() {
         return (
             <div className="recipe">
