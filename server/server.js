@@ -46,8 +46,8 @@ app.use(`/api/admin/delete-user`, adminRouter);
 app.use(express.static('build'));
 
 app.get('/*', (req, res) => {
-    const index = path.join(__dirname, 'build', 'index.html');
-    res.sendFile(index);
+    // const index = path.join(__dirname, 'build', 'index.html');
+    res.sendFile('index.html');
 });
 
 // App Set //
