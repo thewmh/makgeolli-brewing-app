@@ -6,6 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 
+const path = require("path");
+
 import {connect} from 'react-redux';
 
 import Nav from '../Nav/Nav';
@@ -105,6 +107,9 @@ class App extends Component {
       </Router>
   )}
 }
+
+app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "/build", "index.html")));
+
 const mapStateToProps = state => ({
   user: state.user,
   access_level: state.user.access_level,
