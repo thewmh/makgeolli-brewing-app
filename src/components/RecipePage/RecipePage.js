@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './RecipePage.css';
 
+let locationHash = window.location.hash;
+let recipeKey = locationHash.split("/")[2];
+
 class RecipePage extends Component {
 
     addRecipeToUserLibrary = (id) => (event) => {
@@ -15,8 +18,8 @@ class RecipePage extends Component {
     //     ))
     //   }
 
-    getRecipe = (key) => (event) => {
-        this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: {key: this.props.reduxState.recipes.recipe[0].id}});
+    getRecipe = () => (event) => {
+        this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: {key: recipeKey}});
     }
     
       componentDidMount () {
