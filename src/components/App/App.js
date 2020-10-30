@@ -6,7 +6,9 @@ import {
   Switch,
 } from 'react-router-dom';
 
+const express = require('express');
 const path = require("path");
+const app = express();
 
 import {connect} from 'react-redux';
 
