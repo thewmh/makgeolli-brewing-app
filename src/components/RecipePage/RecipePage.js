@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './RecipePage.css';
 
 let locationHash = window.location.hash;
-let recipeKey = locationHash.split("/")[2];
+let recipeKey = parseInt(locationHash.split("/")[2]);
 
 class RecipePage extends Component {
 
