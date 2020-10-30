@@ -21,7 +21,7 @@ const adminRouter = require('./routes/admin.router');
 // Serve static files
 app.use(express.static(__dirname));
 
-app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "../build", "index.html")));
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname + '/client', "build", "index.html")));
 
 // Body parser middleware
 app.use(bodyParser.json());
