@@ -1,6 +1,6 @@
 const express = require('express');
 require('dotenv').config();
-const path = require("path");
+
 const app = express();
 const bodyParser = require('body-parser');
 const sessionMiddleware = require('./modules/session-middleware');
@@ -17,11 +17,6 @@ const addRecipeToLibrary = require('./routes/addRecipeToLibrary.router');
 const myRecipesRouter = require('./routes/myRecipes.router');
 const userProfileRouter = require('./routes/userProfile.router');
 const adminRouter = require('./routes/admin.router');
-
-// Serve static files
-app.use(express.static(__dirname));
-
-app.get('/*', (req, res) => res.sendFile(path.join(__dirname + '/client', "build", "index.html")));
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -46,6 +41,9 @@ app.use(`/api/user/profile`, userProfileRouter);
 app.use(`/api/admin/manage-users`, adminRouter);
 app.use(`/api/admin/edit-user`, adminRouter);
 app.use(`/api/admin/delete-user`, adminRouter);
+
+// Serve static files
+app.use(express.static('build'));
 
 // App Set //
 const PORT = process.env.PORT || 5000;
