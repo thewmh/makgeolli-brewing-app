@@ -45,7 +45,7 @@ app.use(`/api/admin/delete-user`, adminRouter);
 // Serve static files
 app.use(express.static('/build/'));
 
-app.get('/*', (req, res) => res.sendFile('index.html', {root: '/build/'}));
+app.get('/*', (req, res) => res.sendFile('index.html', {root: '/'}));
 
 // App Set //
 const PORT = process.env.PORT || 5000;
