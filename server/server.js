@@ -1,6 +1,6 @@
 const express = require('express');
 require('dotenv').config();
-
+const path = require("path");
 const app = express();
 const bodyParser = require('body-parser');
 const sessionMiddleware = require('./modules/session-middleware');
@@ -43,7 +43,9 @@ app.use(`/api/admin/edit-user`, adminRouter);
 app.use(`/api/admin/delete-user`, adminRouter);
 
 // Serve static files
-app.use(express.static('build'));
+app.use(express.static(path.join(__dirname, "build")));
+
+app.get('/', (req, res) => res.sendFile(path.resolve(__dirname, "build", "index.html")));
 
 // App Set //
 const PORT = process.env.PORT || 5000;
