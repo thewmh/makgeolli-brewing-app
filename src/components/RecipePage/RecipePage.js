@@ -16,7 +16,7 @@ class RecipePage extends Component {
     //   }
 
     getRecipe = (key) => (event) => {
-        this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: {key: key, history: this.props.history}});
+        this.props.dispatch({type: 'GET_RECIPE_VIEW', payload: {key: this.props.reduxState.recipes.recipe[0].id}});
     }
     
       componentDidMount () {
